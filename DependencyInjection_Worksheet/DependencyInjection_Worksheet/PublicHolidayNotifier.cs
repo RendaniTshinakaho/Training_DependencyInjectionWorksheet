@@ -1,5 +1,4 @@
 ﻿using System;
-
 namespace DependencyInjection_Worksheet
 {
     //
@@ -10,11 +9,19 @@ namespace DependencyInjection_Worksheet
     //
     public class PublicHolidayNotifier
     {
+        private readonly IClock _clock;
+        private static DateTime TimeNow {
+            get {return new DateTime(2013,06,17);}
+        }
+        public PublicHolidayNotifier(IClock clock)
+        {
+            _clock = clock;
+        }
+
         public string GenerateNotification()
         {
-            if (DateTime.Now.Date == new DateTime(2013, 6, 17))
-                return "Today is Youth Day";
-            return "Today is a normal day";
+            var now = _clock.Now;
+            return now == TimeNow ? "Today is Youth Day" : "Today is a normal day";
         }
     }
 }

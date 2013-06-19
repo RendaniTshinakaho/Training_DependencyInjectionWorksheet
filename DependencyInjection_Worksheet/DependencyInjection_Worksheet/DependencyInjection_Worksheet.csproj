@@ -42,9 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IClock.cs" />
+    <Compile Include="NormalClock.cs" />
     <Compile Include="PublicHolidayNotifierTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PublicHolidayNotifier.cs" />
+    <Compile Include="SystemClock.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
